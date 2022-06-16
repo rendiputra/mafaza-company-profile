@@ -1,10 +1,16 @@
 <?php
-// Create database connection using config file
-include_once("config.php");
+  // Create database connection using config file
+  include_once("config.php");
 
-if ($result = $mysqli -> query("SELECT * FROM t_desc_profile ORDER BY id_desc_profile DESC LIMIT 1")){
-  
-}
+  // query desc profile
+  if (!$result_desc_profile = $mysqli->query("SELECT * FROM t_desc_profile ORDER BY id_desc_profile DESC LIMIT 1")){
+
+  }
+
+  // query desc profile
+  if (!$result_kegiatan = $mysqli->query("SELECT * FROM t_kegiatan ORDER BY id_kegiatan ASC")){
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -93,10 +99,11 @@ if ($result = $mysqli -> query("SELECT * FROM t_desc_profile ORDER BY id_desc_pr
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <?php
-            while($user_data = mysqli_fetch_array($result)) {         
+            // fetch data
+              while($user_data = mysqli_fetch_array($result_desc_profile)) {         
                 echo "<h3>".$user_data['title']."</h3>";
                 echo $user_data['description'];       
-            }
+              }
             ?>
           </div>
         </div>
@@ -116,54 +123,20 @@ if ($result = $mysqli -> query("SELECT * FROM t_desc_profile ORDER BY id_desc_pr
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-cash-coin"></i></div>
-              <h4>Pemberdayaan Zakat</h4>
-              <p>Melayani pembayaran zakat dan menyalurkan zakat kepada yang membutuhkan.</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-envelope-open"></i></div>
-              <h4>Infaq & Shodaqoh </h4>
-              <p>Menerima infaq & Shodaqoh bagi jamaah yang ingin berbagi dan akan menyalurkannya kepada umat yang
-                membutuhkan.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-book"></i></div>
-              <h4>Perpustakaan</h4>
-              <p>Menyediakan ruang perpustakaan untuk jamaah yang ingin membaca dan menambah wawasan.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-easel2"></i></div>
-              <h4>Taman Pendidikan Al-Qur'an</h4>
-              <p>Memberikan pengajaran Al-Quran dan dasar - dasar dinul Islam kepada anak - anak.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-moon-stars-fill"></i></div>
-              <h4>Menyelenggarakan Pengajian Rutin</h4>
-              <p>Menghadirkan ustadz - ustadz yang akan memberikan wawasan Islam kepada jamaah.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4>Menyelenggarakan Dakwah Islam/Tabliq Akbar</a></h4>
-              <p>Event yang akan dihadiri Kyai dan ustadz ternama dari dalam maupun luar Jawa</p>
-            </div>
-          </div>
+          <?php
+          // fetch data
+            while($kegiatan_data = mysqli_fetch_array($result_kegiatan)) {         
+    
+              echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch">';
+              echo '<div class="icon-box">';
+              echo '  <div class="icon">' . $kegiatan_data['badge'] . '</div>';
+              echo '   <h4>'. $kegiatan_data['title'] .'</h4>';
+              echo '    <p>'. $kegiatan_data['description'] . '</p>';
+              echo '  </div>';
+              echo '</div>';
+            }
+          ?>
 
         </div>
 
