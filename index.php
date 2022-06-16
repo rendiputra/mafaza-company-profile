@@ -1,0 +1,420 @@
+<?php
+// Create database connection using config file
+include_once("config.php");
+
+if ($result = $mysqli -> query("SELECT * FROM t_desc_profile ORDER BY id_desc_profile DESC LIMIT 1")){
+  
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Masjid Fatimatuzzahra</title>
+  <meta content="Masjid Fatimatuzzahra didirikan 2 Desember 1994, dihitung dari dilaksanakannya shalat jum'at pertama yang dilaksanakan di Masjid Fatimatuzzahra." name="description">
+  <meta content="Masjid Fatimatuzzahra" name="keywords">
+
+  <!-- Favicons -->
+  <link href="image/favicon.ico" rel="icon">
+  <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Mafaza</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#profile">Profile</a></li>
+          <li><a class="nav-link scrollto" href="#kegiatan">Kegiatan</a></li>
+          <li><a class="nav-link scrollto " href="#galeri">Galeri</a></li>
+          <li><a class="nav-link scrollto" href="#artikel">Artikel</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#donasi">Donasi</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Home Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center mb-5">
+          <h1>Masjid Fatimatuzzahra</h1>
+          <h2>Ahlan wa Sahlan</h2>
+          <div class="d-flex">
+            <a href="#profile" class="btn-get-started scrollto">Profile Masjid</a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="image/OS5H440.jpg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="profile" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="image/indonesian-traditional-muslim-illustration_579677-559-removebg-preview.png"
+              class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <?php
+            while($user_data = mysqli_fetch_array($result)) {         
+                echo "<h3>".$user_data['title']."</h3>";
+                echo $user_data['description'];       
+            }
+            ?>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Kegiatan Section ======= -->
+    <section id="kegiatan" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Kegiatan dan Layanan</h2>
+          <center>
+            <hr style="border: 3px solid #16df7e; width: 50px;" />
+          </center>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-cash-coin"></i></div>
+              <h4>Pemberdayaan Zakat</h4>
+              <p>Melayani pembayaran zakat dan menyalurkan zakat kepada yang membutuhkan.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-envelope-open"></i></div>
+              <h4>Infaq & Shodaqoh </h4>
+              <p>Menerima infaq & Shodaqoh bagi jamaah yang ingin berbagi dan akan menyalurkannya kepada umat yang
+                membutuhkan.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-book"></i></div>
+              <h4>Perpustakaan</h4>
+              <p>Menyediakan ruang perpustakaan untuk jamaah yang ingin membaca dan menambah wawasan.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-easel2"></i></div>
+              <h4>Taman Pendidikan Al-Qur'an</h4>
+              <p>Memberikan pengajaran Al-Quran dan dasar - dasar dinul Islam kepada anak - anak.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-moon-stars-fill"></i></div>
+              <h4>Menyelenggarakan Pengajian Rutin</h4>
+              <p>Menghadirkan ustadz - ustadz yang akan memberikan wawasan Islam kepada jamaah.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-arch"></i></div>
+              <h4>Menyelenggarakan Dakwah Islam/Tabliq Akbar</a></h4>
+              <p>Event yang akan dihadiri Kyai dan ustadz ternama dari dalam maupun luar Jawa</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= galeri Section ======= -->
+    <section id="galeri">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Galeri</h2>
+          <center>
+            <hr style="border: 3px solid #16df7e; width: 50px;" />
+          </center>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan1.jpeg"><img class="card-img-top" src="image/galeri/kegiatan1.jpeg"
+                alt="Komposisi"></a>
+          </div>
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan2.jpeg"><img class="card-img-top" src="image/galeri/kegiatan2.jpeg"
+                alt="Komposisi"></a>
+          </div>
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan3.jpeg"><img class="card-img-top" src="image/galeri/kegiatan3.jpeg"
+                alt="Komposisi"></a>
+          </div>
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan1.jpeg"><img class="card-img-top" src="image/galeri/kegiatan1.jpeg"
+                alt="Komposisi"></a>
+          </div>
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan5.jpeg"><img class="card-img-top" src="image/galeri/kegiatan3.jpeg"
+                alt="Komposisi"></a>
+          </div>
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan1.jpeg"><img class="card-img-top" src="image/galeri/kegiatan1.jpeg"
+                alt="Komposisi"></a>
+          </div>
+          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
+            <a href="image/galeri/kegiatan2.jpeg"><img class="card-img-top" src="image/galeri/kegiatan2.jpeg"
+                alt="Komposisi"></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End galeri Section -->
+
+
+
+    <!-- ======= Donasi Section ======= -->
+    <section id="donasi" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3>Donasi</h3>
+          <i>
+            <p> Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan
+              tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia
+              kehendaki, dan Allah Maha Luas, Maha Mengetahui.</p>
+
+            <p class="text-center"> (Q.S. Al-Baqarah : 261)</p>
+          </i>
+          <strong>
+            <p class="text-center">
+              Rekening Donasi: <br>
+              Bank Muamalat: 541-007-9989 (a.n Masjid Fatimatuzzahra) <br>
+              Bank Syariah Indonesia: 710-497-8187 (a.n LAZ Al-Irsyad Purwokerto) <br>
+            </p>
+          </strong>
+        </div>
+
+      </div>
+    </section><!-- End Donasi Section -->
+
+    <!-- ======= Artikel Section ======= -->
+    <section id="artikel" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Artikel</h2>
+          <center>
+            <hr style="border: 3px solid #16df7e; width: 50px;" />
+          </center>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="image/2021-07-28.jpg" alt="">
+              <h4>PENDAFTARAN PESERTA
+                PENDIDIKAN GURU TPQ
+                ANGKATAN VII</h4>
+              <span>28 Juli 2021</span>
+              <p>
+                Yuk, jgn sampai ketinggalan. Angkatan-angkatan yang lalu peserta membludak, banyak yg terrpaksa tidak
+                diterima karena daya tampung tidak mencukupi.
+
+                Formulir pendaftaran dapat di isi melalui: https://bit.ly/daftarPGTPQ7 atau b...
+              </p>
+              <div class="social">
+                <a href="artikel-detail.html" class="btn btn-success text-white">Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="image/2021-06-11.jpg" alt="">
+              <h4>PENDAFTARAN SANTRI PESANTREN MAHASISWA/(I) MAFAZA</h4>
+              <span>11 Juni 2021</span>
+              <p>
+                Di era pandemi, menjadi mahasiswa dalam menempuh pendidikan, bisa juga loh sekaligus menjadi santri
+                dalam menempa dan meningkatkan ilmu ruhani. Kegiatan yang diikuti insyaAllah bermanfaat, meningkatkan
+                softskill...
+              </p>
+              <div class="social">
+                <a href="artikel-detail.html" class="btn btn-success text-white">Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="member">
+              <img src="image/2021-04-12.jpg" alt="">
+              <h4>TARAWIH RAMADHAN 1442</h4>
+              <span>12 April 2021</span>
+              <p>
+                insya Allah nanti malem siap-siap Tarawih, tetep nunggu keputusan pemerintah tentang awal Ramadhan.
+                Tetap juga jaga protokol kesehatan
+              </p>
+              <div class="social">
+                <a href="artikel-detail.html" class="btn btn-success text-white">Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-12 d-flex justify-content-center">
+            <a href="artikel-detail.html" class="btn btn-primary justify-content-center">Lihat Selengkapnya</a>
+          </div> coming soon, nanti akan dibuka kembali kalau ada backend -->
+        </div>
+
+      </div>
+    </section><!-- End Artikel Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <center>
+            <hr style="border: 3px solid #16df7e; width: 50px;" />
+          </center>
+          <p>Saran dan kritik untuk kemajuan masjid kami tercinta akan kami dengarkan selalu.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="#" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6 mt-3 mt-md-0">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Kirim</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="bg-light text-center text-lg-start bg-dark text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0 ">
+          <h5 class="text-uppercase"><strong>Alamat</strong></h5>
+
+          <p style="font-size: 1.1em;">
+            Jl. H. Madrani No.1, Brubahan, Grendeng, Kec. Purwokerto Utara, Kabupaten Banyumas, Jawa Tengah 53122
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase"><strong>Halaman</strong></h5>
+          <ul>
+            <li style="font-size: 1.1em; list-style-type:none;"><a href="#hero">Home</a> </li>
+            <li style="font-size: 1.1em; list-style-type:none;"><a href="#profile">Profile</a> </li>
+            <li style="font-size: 1.1em; list-style-type:none;"><a href="#kegiatan">Kegiatan</a> </li>
+            <li style="font-size: 1.1em; list-style-type:none;"><a href="#galeri">Galeri</a> </li>
+            <li style="font-size: 1.1em; list-style-type:none;"><a href="#artikel">Artikel</a> </li>
+            <li style="font-size: 1.1em; list-style-type:none;"><a href="#contact">Contact</a> </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.1337580568752!2d109.24981936651538!3d-7.40587801352809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655eeffc9048e3%3A0x2da558d27eaceb91!2sMasjid%20Fatimatuzzahra!5e0!3m2!1sid!2sid!4v1651597824836!5m2!1sid!2sid"
+            frameborder="0" style="border:0; width: 100%; height: 200px;" allowfullscreen></iframe>
+        </div>
+        <!--Grid column-->
+      </div>
+
+    </div>
+    <div class="bg-black d-flex justify-content-center p-3">
+      <div class="copyright" style="font-size: 1.2em;">
+        &copy; Copyright <strong><span>2022</span></strong>.
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
