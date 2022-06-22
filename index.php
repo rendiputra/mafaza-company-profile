@@ -11,6 +11,21 @@
   if (!$result_kegiatan = $mysqli->query("SELECT * FROM t_kegiatan ORDER BY id_kegiatan ASC")){
 
   }
+
+  // query desc donasi
+  if (!$result_desc_donasi = $mysqli->query("SELECT * FROM t_desc_donasi ORDER BY id_desc_donasi DESC LIMIT 1")){
+
+  }
+
+  // query artikel
+  if (!$result_artikel = $mysqli->query("SELECT * FROM t_artikel ORDER BY id_artikel DESC")){
+
+  }
+
+  // query t_gallery
+  if (!$result_gallery = $mysqli->query("SELECT * FROM t_gallery ORDER BY id_gallery DESC limit 10")){
+
+  }
 ?>
 
 <!DOCTYPE html>
@@ -128,7 +143,7 @@
           // fetch data
             while($kegiatan_data = mysqli_fetch_array($result_kegiatan)) {         
     
-              echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch">';
+              echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">';
               echo '<div class="icon-box">';
               echo '  <div class="icon">' . $kegiatan_data['badge'] . '</div>';
               echo '   <h4>'. $kegiatan_data['title'] .'</h4>';
@@ -155,34 +170,15 @@
         </div>
 
         <div class="row d-flex justify-content-center">
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan1.jpeg"><img class="card-img-top" src="image/galeri/kegiatan1.jpeg"
-                alt="Komposisi"></a>
-          </div>
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan2.jpeg"><img class="card-img-top" src="image/galeri/kegiatan2.jpeg"
-                alt="Komposisi"></a>
-          </div>
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan3.jpeg"><img class="card-img-top" src="image/galeri/kegiatan3.jpeg"
-                alt="Komposisi"></a>
-          </div>
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan1.jpeg"><img class="card-img-top" src="image/galeri/kegiatan1.jpeg"
-                alt="Komposisi"></a>
-          </div>
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan5.jpeg"><img class="card-img-top" src="image/galeri/kegiatan3.jpeg"
-                alt="Komposisi"></a>
-          </div>
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan1.jpeg"><img class="card-img-top" src="image/galeri/kegiatan1.jpeg"
-                alt="Komposisi"></a>
-          </div>
-          <div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">
-            <a href="image/galeri/kegiatan2.jpeg"><img class="card-img-top" src="image/galeri/kegiatan2.jpeg"
-                alt="Komposisi"></a>
-          </div>
+          <?php
+          // fetch data
+            while($gallery_data = mysqli_fetch_array($result_gallery)) {         
+              echo '<div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">';
+              echo '  <a href="image/galeri/' . $gallery_data['image_path'] . '"><img class="card-img-top" src="image/galeri/' . $gallery_data['image_path'] . '"';
+              echo '      alt="' . $gallery_data['description'] . '"></a>';
+              echo '</div>';
+            }
+          ?>
         </div>
 
       </div>
@@ -196,20 +192,12 @@
 
         <div class="text-center">
           <h3>Donasi</h3>
-          <i>
-            <p> Perumpamaan orang yang menginfakkan hartanya di jalan Allah seperti sebutir biji yang menumbuhkan
-              tujuh tangkai, pada setiap tangkai ada seratus biji. Allah melipatgandakan bagi siapa yang Dia
-              kehendaki, dan Allah Maha Luas, Maha Mengetahui.</p>
-
-            <p class="text-center"> (Q.S. Al-Baqarah : 261)</p>
-          </i>
-          <strong>
-            <p class="text-center">
-              Rekening Donasi: <br>
-              Bank Muamalat: 541-007-9989 (a.n Masjid Fatimatuzzahra) <br>
-              Bank Syariah Indonesia: 710-497-8187 (a.n LAZ Al-Irsyad Purwokerto) <br>
-            </p>
-          </strong>
+          <?php
+            // fetch data
+              while($profile_data = mysqli_fetch_array($result_desc_donasi)) {
+                echo $profile_data['description'];       
+              }
+            ?>
         </div>
 
       </div>
@@ -227,55 +215,21 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="image/2021-07-28.jpg" alt="">
-              <h4>PENDAFTARAN PESERTA
-                PENDIDIKAN GURU TPQ
-                ANGKATAN VII</h4>
-              <span>28 Juli 2021</span>
-              <p>
-                Yuk, jgn sampai ketinggalan. Angkatan-angkatan yang lalu peserta membludak, banyak yg terrpaksa tidak
-                diterima karena daya tampung tidak mencukupi.
-
-                Formulir pendaftaran dapat di isi melalui: https://bit.ly/daftarPGTPQ7 atau b...
-              </p>
-              <div class="social">
-                <a href="artikel-detail.html" class="btn btn-success text-white">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="image/2021-06-11.jpg" alt="">
-              <h4>PENDAFTARAN SANTRI PESANTREN MAHASISWA/(I) MAFAZA</h4>
-              <span>11 Juni 2021</span>
-              <p>
-                Di era pandemi, menjadi mahasiswa dalam menempuh pendidikan, bisa juga loh sekaligus menjadi santri
-                dalam menempa dan meningkatkan ilmu ruhani. Kegiatan yang diikuti insyaAllah bermanfaat, meningkatkan
-                softskill...
-              </p>
-              <div class="social">
-                <a href="artikel-detail.html" class="btn btn-success text-white">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="image/2021-04-12.jpg" alt="">
-              <h4>TARAWIH RAMADHAN 1442</h4>
-              <span>12 April 2021</span>
-              <p>
-                insya Allah nanti malem siap-siap Tarawih, tetep nunggu keputusan pemerintah tentang awal Ramadhan.
-                Tetap juga jaga protokol kesehatan
-              </p>
-              <div class="social">
-                <a href="artikel-detail.html" class="btn btn-success text-white">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
+          <?php
+            // fetch data
+            while($artikel_data = mysqli_fetch_array($result_artikel)) {
+              echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member">';
+                  echo '<img src="image/' . $artikel_data['image'] . '" alt="">';
+                  echo '<h4>' . $artikel_data['title'] . '</h4>';
+                  echo substr($artikel_data['description'], 0,  200);
+                  echo '<div class="social">';
+                    echo '<a href="artikel_detail.php?' . $artikel_data['id_artikel'] . '" class="btn btn-success text-white">Selengkapnya</a>';
+                  echo '</div>
+                </div>
+              </div>';
+              }
+            ?>
 
           <!-- <div class="col-lg-12 d-flex justify-content-center">
             <a href="artikel-detail.html" class="btn btn-primary justify-content-center">Lihat Selengkapnya</a>
