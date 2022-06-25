@@ -45,21 +45,28 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Mafaza</a>
+            <a href="index.php">Mafaza</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">MZ</a>
+            <a href="index.php">MZ</a>
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
-              <li class="nav-item dropdown active">
+              <li class="nav-item dropdown <?php if($_GET['page'] == "buat-artikel"){ echo "active";} ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
                   <li class="active"><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                 </ul>
               </li>
-              <li class="menu-header">Starter</li>
+              <li class="menu-header">Admin Panel</li>
+              <li class="nav-item dropdown active">
+                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Artikel</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="admin.php?page=list-artikel">List Artikel</a></li>
+                  <li><a class="nav-link" href="admin.php?page=buat-artikel">Buat Artikel Baru</a></li>
+                </ul>
+              </li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
                 <ul class="dropdown-menu">
@@ -94,14 +101,7 @@
                   <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Forms</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="forms-advanced-form.html">Advanced Form</a></li>
-                  <li><a class="nav-link" href="forms-editor.html">Editor</a></li>
-                  <li><a class="nav-link" href="forms-validation.html">Validation</a></li>
-                </ul>
-              </li>
+              
               <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
             </ul>
 
@@ -118,10 +118,21 @@
         <?php
           if(isset($_GET['page'])) {
             $page = $_GET['page'];
-
+            
+            // route
             switch ($page) {
+              // module artikel
+              case 'list-artikel':
+                include('core/list_artikel.php');
+                break;   
               case 'buat-artikel':
-                include('buat_artikel.php');
+                include('core/buat_artikel.php');
+                break;   
+              case 'update-artikel':
+                include('core/update_artikel.php');
+                break;   
+              case 'delete-artikel':
+                include('core/delete_artikel_act.php');
                 break;   
             }
             
@@ -135,7 +146,7 @@
           Copyright &copy; 2022 <div class="bullet"></div> Masjid Fatimatuzahra
         </div>
         <div class="footer-right">
-          2.3.0
+          V 1.0.1
         </div>
       </footer>
     </div>
