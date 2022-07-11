@@ -15,7 +15,7 @@
             <div class="card-body">
               <div class="form-group">
                 <label>Judul</label>
-                <input name="judul" type="text" class="form-control" required="">
+                <input name="judul" type="text" class="form-control" required="" placeholder="Judul artikel">
               </div>
               <div class="form-group">
                 <label>Gambar</label>
@@ -26,7 +26,7 @@
               </div>
               <div class="form-group">
                 <label>Deskripsi Artikel</label>
-                <textarea name="editor1" id="editor1" class="form-control" required="">
+                <textarea name="editor1" id="editor1" class="form-control" required="" placeholder="Judul artikel">
 
                 </textarea>
               </div>

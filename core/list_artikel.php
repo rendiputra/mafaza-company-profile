@@ -23,9 +23,8 @@ if ($result = $mysqli->query("SELECT * FROM t_artikel ORDER BY id_artikel DESC")
               <h4>List Artikel</h4>
             </div>
             <div class="card-body">
+              <a href="admin.php?page=buat-artikel" class="btn btn-primary mb-3">Tulis Artikel Baru</a>
               <div class="table-responsive">
-
-
                 <table class="table table-hover">
                   <thead>
                     <tr>
@@ -47,7 +46,7 @@ if ($result = $mysqli->query("SELECT * FROM t_artikel ORDER BY id_artikel DESC")
                       echo "<td>" . substr($d['title'], 0,  50) . "</td>";
                       echo "<td>" . substr($d['description'], 0,  50) . "</td>";
                       echo '<td>' . date_format($date, "Y M d") . '</td>';
-                      echo '<td> <a href="admin.php?page=update-artikel&update_id=' . $d['id_artikel'] . '" class="btn btn-info mr-1 mt-1">Update</a><a href="admin.php?page=delete-artikel&delete_id=' . $d['id_artikel'] . '" class="btn btn-danger">Delete</a> </td>';
+                      echo '<td> <a href="admin.php?page=update-artikel&update_id=' . $d['id_artikel'] . '" class="btn btn-info mr-1 mt-1">Update</a><a href="core/delete_artikel_act.php?page=delete-artikel&delete_id=' . $d['id_artikel'] . '" class="btn btn-danger">Delete</a> </td>';
                       echo '</tr>';
                     }
                     ?>

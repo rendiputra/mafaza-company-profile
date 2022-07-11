@@ -5,6 +5,10 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Masjid Fatimatuzzahra</title>
 
+    <!-- Favicons -->
+  <link href="image/favicon.ico" rel="icon">
+  <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
+
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -51,16 +55,8 @@
             <a href="index.php">MZ</a>
           </div>
           <ul class="sidebar-menu">
-              <li class="menu-header">Dashboard</li>
-              <li class="nav-item dropdown <?php if($_GET['page'] == "buat-artikel"){ echo "active";} ?>">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                  <li class="active"><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
-                </ul>
-              </li>
               <li class="menu-header">Admin Panel</li>
-              <li class="nav-item dropdown active">
+              <li class="nav-item dropdown <?php if(isset($_GET['page'])){ if($_GET['page'] == "buat-artikel" || $_GET['page'] == "list-artikel" || $_GET['page'] == "update-artikel"){ echo "active";}} ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Artikel</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="admin.php?page=list-artikel">List Artikel</a></li>
