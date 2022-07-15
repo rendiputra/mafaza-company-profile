@@ -15,7 +15,6 @@ if (isset($_SESSION['username'])) {
     if ($result->num_rows > 0) {
       $row = mysqli_fetch_assoc($result);
       if (password_verify($password, $row['password'])) {
-        echo 'Password is valid!';
         session_start();
         $_SESSION['nama'];
         $_SESSION['email'];

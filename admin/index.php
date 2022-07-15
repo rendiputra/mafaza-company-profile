@@ -112,10 +112,15 @@
                           }
                         } ?>"><a class="nav-link " href="/admin?page=alamat"><i class="bi bi-pin-angle"></i> <span>Alamat</span></a></li>
             <li class="<?php if (isset($_GET['page'])) {
-                          if ($_GET['page'] == "akun") {
+                          if ($_GET['page'] == "list-contact-us") {
                             echo "active";
                           }
                         } ?>"><a class="nav-link " href="/admin?page=list-contact-us"><i class="bi bi-chat-left-text"></i><span>Contact Us</span></a></li>
+            <li class="<?php if (isset($_GET['page'])) {
+                          if ($_GET['page'] == "akun") {
+                            echo "active";
+                          }
+                        } ?>"><a class="nav-link " href="/admin?page=list-akun"><i class="bi bi-file-person"></i><span>Kelola Akun</span></a></li>
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -186,9 +191,16 @@
             case 'list-contact-us':
               include('../core/list_contact_us.php');
               break;
+              
               // Akun
             case 'list-akun':
               include('../core/list_akun.php');
+              break;
+            case 'buat-akun':
+              include('../core/buat_akun.php');
+              break;
+            case 'update-akun':
+              include('../core/update_akun.php');
               break;
 
 

@@ -40,7 +40,6 @@ if ($result = $mysqli->query("SELECT * FROM t_kegiatan ORDER BY id_kegiatan DESC
                     // fetch data
                     $no = 1;
                     while ($d = mysqli_fetch_array($result)) {
-                      $date=date_create($d['created_at']);
                       echo '<tr>';
                       echo '<th scope="row">' . $no++ . '</th>';
                       echo "<td>" . substr($d['title'], 0,  50) . "</td>";
