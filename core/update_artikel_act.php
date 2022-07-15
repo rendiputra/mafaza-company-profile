@@ -63,21 +63,21 @@ if (isset($_POST['submit'])) {
           $query = mysqli_query($mysqli, "UPDATE t_artikel SET title = '$judul', description = '$deskripsi', image = '$newfilename' WHERE id_artikel = $id");
 
           if ($query) {
-            header("location: ../admin.php?page=list-artikel");
+            header("location: ../admin?page=list-artikel");
           } else {
-            echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin.php?page=list-artikel">Di sini</a>';
+            echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin?page=list-artikel">Di sini</a>';
           }
         } else {
-          header("location: ../admin.php?page=list-artikel", true, 200);
+          header("location: ../admin?page=list-artikel", true, 200);
         }
       }
     } else {
       $query = mysqli_query($mysqli, "UPDATE t_artikel SET title = '$judul', description = '$deskripsi', image = '$tmp_img' WHERE id_artikel = $id");
 
       if ($query) {
-        header("location: ../admin.php?page=list-artikel");
+        header("location: ../admin?page=list-artikel");
       } else {
-        echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin.php?page=list-artikel">Di sini</a>';
+        echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin?page=list-artikel">Di sini</a>';
       }
     }
   }

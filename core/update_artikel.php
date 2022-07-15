@@ -1,16 +1,16 @@
 <?php
 // Create database connection using config file
-include_once("config.php");
+include_once("../config.php");
 
 if (isset($_GET['update_id'])){
   $id = $_GET['update_id'];
   
   // query desc profile
-  if ($result = $mysqli->query("SELECT * FROM t_artikel where id_artikel = $id")) {
+  if ($result = $mysqli->query("SELECT * FROM t_artikel where id_artikel = $id limit 1")) {
 
   }
 } else {
-  header("location:admin.php?page=list-artikel");
+  header("location: /admin?page=list-artikel");
 }
 ?>
 

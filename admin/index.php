@@ -61,17 +61,18 @@
               <li class="nav-item dropdown <?php if(isset($_GET['page'])){ if($_GET['page'] == "buat-artikel" || $_GET['page'] == "list-artikel" || $_GET['page'] == "update-artikel"){ echo "active";}} ?>">
                 <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Artikel</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="admin.php?page=list-artikel">List Artikel</a></li>
-                  <li><a class="nav-link" href="admin.php?page=buat-artikel">Buat Artikel Baru</a></li>
+                  <li><a class="nav-link" href="/admin?page=list-artikel">List Artikel</a></li>
+                  <li><a class="nav-link" href="/admin?page=buat-artikel">Buat Artikel Baru</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown <?php if(isset($_GET['page'])){ if($_GET['page'] == "buat-kegiatan" || $_GET['page'] == "list-kegiatan" || $_GET['page'] == "update-kegiatan"){ echo "active";}} ?>">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-columns"></i> <span>Kegiatan & Layanan</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Kegiatan & Layanan</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="admin.php?page=list-kegiatan">List Kegiatan</a></li>
-                  <li><a class="nav-link" href="admin.php?page=buat-kegiatan">Buat Kegiatan  Baru</a></li>
+                  <li><a class="nav-link" href="/admin?page=list-kegiatan">List Kegiatan</a></li>
+                  <li><a class="nav-link" href="/admin?page=buat-kegiatan">Buat Kegiatan  Baru</a></li>
                 </ul>
               </li>
+              <li><a class="nav-link" href="/admin?page=donasi"><i class="far fa-square"></i> <span>Text Donasi</span></a></li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kegiatan</span></a>
                 <ul class="dropdown-menu">
@@ -128,32 +129,37 @@
             switch ($page) {
               // module artikel
               case 'list-artikel':
-                include('core/list_artikel.php');
+                include('../core/list_artikel.php');
                 break;   
               case 'buat-artikel':
-                include('core/buat_artikel.php');
+                include('../core/buat_artikel.php');
                 break;   
               case 'update-artikel':
-                include('core/update_artikel.php');
+                include('../core/update_artikel.php');
                 break;   
               case 'delete-artikel':
-                include('core/delete_artikel_act.php');
+                include('../core/delete_artikel_act.php');
                 break; 
 
               // module kegiatan & layanan
               case 'list-kegiatan':
-                include('core/list_kegiatan.php');
+                include('../core/list_kegiatan.php');
                 break;  
-                case 'buat-kegiatan':
-                  include('core/buat_kegiatan.php');
-                  break;   
+              case 'buat-kegiatan':
+                include('../core/buat_kegiatan.php');
+                break; 
+              case 'update-kegiatan':
+                include('../core/update_kegiatan.php');
+                break; 
+                  
+                  
               default:
-                include('core/404.php');
+                include('../core/404.php');
                 break;
             }
             
           } else {
-              include('core/list_artikel.php');
+              include('../core/list_artikel.php');
           }
         ?>
       </div>

@@ -56,21 +56,13 @@ if (isset($_POST['submit'])) {
       $query = mysqli_query($mysqli, "INSERT INTO t_artikel (id_artikel, title, description, image, created_at, updated_at, deleted_at, id_user) VALUES (NULL, '$judul', '$deskripsi', '$newfilename', '$now', null, null, 1)");
 
       if ($query) {
-        header("location: ../admin.php?page=buat-artikel");
+        header("location: ../admin?page=list-artikel");
       } else {
-        echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin.php?page=buat-artikel">Di sini</a>';
+        echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin?page=buat-artikel">Di sini</a>';
       }
     } else {
-      header("location: ../admin.php?page=buat-artikel", true, 200);
+      header("location: ../admin?page=buat-artikel", true, 200);
     }
   }
 
-  // $extension = pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION);
-
-  // if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif') {
-  //   echo "File is image <br />";
-  //   echo "File type = " . $extension;
-  // } else {
-  //   echo "File is not image";
-  // }
 }
