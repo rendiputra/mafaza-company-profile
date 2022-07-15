@@ -1,3 +1,6 @@
+<?php
+  include '../login/check_session.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,10 +43,10 @@
 
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
               <img alt="image" src="../assets/assets-stisla/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-              <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+              <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $_SESSION['nama'] ?></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <a href="/login/logout.php" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
@@ -109,7 +112,7 @@
                           }
                         } ?>"><a class="nav-link " href="/admin?page=alamat"><i class="bi bi-pin-angle"></i> <span>Alamat</span></a></li>
             <li class="<?php if (isset($_GET['page'])) {
-                          if ($_GET['page'] == "list-contact-us") {
+                          if ($_GET['page'] == "akun") {
                             echo "active";
                           }
                         } ?>"><a class="nav-link " href="/admin?page=list-contact-us"><i class="bi bi-chat-left-text"></i><span>Contact Us</span></a></li>
@@ -182,6 +185,10 @@
               // contact-us
             case 'list-contact-us':
               include('../core/list_contact_us.php');
+              break;
+              // Akun
+            case 'list-akun':
+              include('../core/list_akun.php');
               break;
 
 

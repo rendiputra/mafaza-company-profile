@@ -78,6 +78,7 @@ if ($result_alamat = $mysqli->query("SELECT * FROM t_alamat ORDER BY id_alamat D
           <li><a class="nav-link scrollto" href="#artikel">Artikel</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="#donasi">Donasi</a></li>
+          <li><a class="getstarted" href="/admin?page=list-artikel">Dashboard</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

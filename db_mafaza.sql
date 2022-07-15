@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jul 2022 pada 20.35
+-- Waktu pembuatan: 15 Jul 2022 pada 22.10
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.10
 
@@ -20,17 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_mafaza`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `asd`
---
-
-CREATE TABLE `asd` (
-  `asd` int(11) NOT NULL,
-  `asd2` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -196,15 +185,30 @@ INSERT INTO `t_kegiatan` (`id_kegiatan`, `title`, `description`, `badge`, `creat
 (5, 'Menyelenggarakan Pengajian Rutin', 'Menghadirkan ustadz - ustadz yang akan memberikan wawasan Islam kepada jamaah.', '<i class=\"bi bi-moon-stars-fill\"></i>', '2022-06-16 08:22:04'),
 (6, 'Menyelenggarakan Dakwah Islam/Tabliq Akbar', 'Event yang akan dihadiri Kyai dan ustadz ternama dari dalam maupun luar Jawa.', '<i class=\"bx bx-arch\"></i>', '2022-06-16 08:22:04');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE `users` (
+  `id_users` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id_users`, `nama`, `email`, `password`, `created_at`) VALUES
+(1, 'qwe', 'qwe@qwe.qwe', '$2y$10$XPPukE1GznBVHHtQ/Mr6v.uU9y2NALViSuvmP.N4a54FTT9BD87GO', '2022-07-15 19:22:47');
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `asd`
---
-ALTER TABLE `asd`
-  ADD PRIMARY KEY (`asd`);
 
 --
 -- Indeks untuk tabel `t_alamat`
@@ -249,14 +253,14 @@ ALTER TABLE `t_kegiatan`
   ADD PRIMARY KEY (`id_kegiatan`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indeks untuk tabel `users`
 --
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_users`);
 
 --
--- AUTO_INCREMENT untuk tabel `asd`
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
-ALTER TABLE `asd`
-  MODIFY `asd` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `t_alamat`
@@ -299,6 +303,12 @@ ALTER TABLE `t_gallery`
 --
 ALTER TABLE `t_kegiatan`
   MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT untuk tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
