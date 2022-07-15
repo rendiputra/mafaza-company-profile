@@ -72,7 +72,7 @@
                   <li><a class="nav-link" href="/admin?page=buat-kegiatan">Buat Kegiatan  Baru</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link" href="/admin?page=donasi"><i class="far fa-square"></i> <span>Text Donasi</span></a></li>
+              <li class="<?php if(isset($_GET['page'])){ if($_GET['page'] == "donasi"){ echo "active";}} ?>"><a class="nav-link " href="/admin?page=donasi"><i class="far fa-square"></i> <span>Text Donasi</span></a></li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kegiatan</span></a>
                 <ul class="dropdown-menu">
@@ -150,9 +150,14 @@
                 break; 
               case 'update-kegiatan':
                 include('../core/update_kegiatan.php');
+                break;
+
+              // donasi
+              case 'donasi':
+                include('../core/donasi.php');
                 break; 
                   
-                  
+              
               default:
                 include('../core/404.php');
                 break;
