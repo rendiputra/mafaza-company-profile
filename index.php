@@ -1,31 +1,38 @@
 <?php
-  // Create database connection using config file
-  include_once("config.php");
+// Create database connection using config file
+include_once("config.php");
 
-  // query desc profile
-  if (!$result_desc_profile = $mysqli->query("SELECT * FROM t_desc_profile ORDER BY id_desc_profile DESC LIMIT 1")){
+// query desc profile
+if (!$result_desc_profile = $mysqli->query("SELECT * FROM t_desc_profile ORDER BY id_desc_profile DESC LIMIT 1")) {
+}
 
+// query desc profile
+if (!$result_kegiatan = $mysqli->query("SELECT * FROM t_kegiatan ORDER BY id_kegiatan ASC")) {
+}
+
+// query desc donasi
+if (!$result_desc_donasi = $mysqli->query("SELECT * FROM t_desc_donasi ORDER BY id_desc_donasi DESC LIMIT 1")) {
+}
+
+// query artikel
+if (!$result_artikel = $mysqli->query("SELECT * FROM t_artikel ORDER BY id_artikel DESC limit 6")) {
+}
+
+// query t_gallery
+if (!$result_gallery = $mysqli->query("SELECT * FROM t_gallery ORDER BY id_gallery DESC limit 10")) {
+}
+// query t_alamat
+if ($result_alamat = $mysqli->query("SELECT * FROM t_alamat ORDER BY id_alamat DESC limit 1")) {
+  while ($alamat_data = mysqli_fetch_array($result_alamat)) {
+    $link_maps = $alamat_data['link_maps'];
+    $alamat = $alamat_data['alamat'];
   }
+} else {
+  $link_maps = "";
+  $alamat = "";
+}
 
-  // query desc profile
-  if (!$result_kegiatan = $mysqli->query("SELECT * FROM t_kegiatan ORDER BY id_kegiatan ASC")){
 
-  }
-
-  // query desc donasi
-  if (!$result_desc_donasi = $mysqli->query("SELECT * FROM t_desc_donasi ORDER BY id_desc_donasi DESC LIMIT 1")){
-
-  }
-
-  // query artikel
-  if (!$result_artikel = $mysqli->query("SELECT * FROM t_artikel ORDER BY id_artikel DESC")){
-
-  }
-
-  // query t_gallery
-  if (!$result_gallery = $mysqli->query("SELECT * FROM t_gallery ORDER BY id_gallery DESC limit 10")){
-
-  }
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +51,7 @@
   <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -109,16 +114,15 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="image/indonesian-traditional-muslim-illustration_579677-559-removebg-preview.png"
-              class="img-fluid" alt="">
+            <img src="image/indonesian-traditional-muslim-illustration_579677-559-removebg-preview.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <?php
             // fetch data
-              while($user_data = mysqli_fetch_array($result_desc_profile)) {         
-                echo "<h3>".$user_data['title']."</h3>";
-                echo $user_data['description'];       
-              }
+            while ($user_data = mysqli_fetch_array($result_desc_profile)) {
+              echo "<h3>" . $user_data['title'] . "</h3>";
+              echo $user_data['description'];
+            }
             ?>
           </div>
         </div>
@@ -141,16 +145,16 @@
 
           <?php
           // fetch data
-            while($kegiatan_data = mysqli_fetch_array($result_kegiatan)) {         
-    
-              echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">';
-              echo '<div class="icon-box">';
-              echo '  <div class="icon">' . $kegiatan_data['badge'] . '</div>';
-              echo '   <h4>'. $kegiatan_data['title'] .'</h4>';
-              echo '    <p>'. $kegiatan_data['description'] . '</p>';
-              echo '  </div>';
-              echo '</div>';
-            }
+          while ($kegiatan_data = mysqli_fetch_array($result_kegiatan)) {
+
+            echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">';
+            echo '<div class="icon-box">';
+            echo '  <div class="icon">' . $kegiatan_data['badge'] . '</div>';
+            echo '   <h4>' . $kegiatan_data['title'] . '</h4>';
+            echo '    <p>' . $kegiatan_data['description'] . '</p>';
+            echo '  </div>';
+            echo '</div>';
+          }
           ?>
 
         </div>
@@ -172,12 +176,12 @@
         <div class="row d-flex justify-content-center">
           <?php
           // fetch data
-            while($gallery_data = mysqli_fetch_array($result_gallery)) {         
-              echo '<div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">';
-              echo '  <a href="image/galeri/' . $gallery_data['image_path'] . '"><img class="card-img-top" src="image/galeri/' . $gallery_data['image_path'] . '"';
-              echo '      alt="' . $gallery_data['description'] . '"></a>';
-              echo '</div>';
-            }
+          while ($gallery_data = mysqli_fetch_array($result_gallery)) {
+            echo '<div class="card  mt-2 ml-2 mb-2  col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12" style="border-style: none;">';
+            echo '  <a href="image/galeri/' . $gallery_data['image_path'] . '"><img class="card-img-top" src="image/galeri/' . $gallery_data['image_path'] . '"';
+            echo '      alt="' . $gallery_data['description'] . '"></a>';
+            echo '</div>';
+          }
           ?>
         </div>
 
@@ -193,11 +197,11 @@
         <div class="text-center">
           <h3>Donasi</h3>
           <?php
-            // fetch data
-              while($profile_data = mysqli_fetch_array($result_desc_donasi)) {
-                echo $profile_data['description'];       
-              }
-            ?>
+          // fetch data
+          while ($profile_data = mysqli_fetch_array($result_desc_donasi)) {
+            echo $profile_data['description'];
+          }
+          ?>
         </div>
 
       </div>
@@ -216,20 +220,20 @@
 
         <div class="row">
           <?php
-            // fetch data
-            while($artikel_data = mysqli_fetch_array($result_artikel)) {
-              echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          // fetch data
+          while ($artikel_data = mysqli_fetch_array($result_artikel)) {
+            echo '<div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member">';
-                  echo '<img src="image/' . $artikel_data['image'] . '" alt="">';
-                  echo '<h4>' . $artikel_data['title'] . '</h4>';
-                  echo substr($artikel_data['description'], 0,  200);
-                  echo '<div class="social">';
-                    echo '<a href="artikel_detail.php?' . $artikel_data['id_artikel'] . '" class="btn btn-success text-white">Selengkapnya</a>';
-                  echo '</div>
+            echo '<img src="image/' . $artikel_data['image'] . '" alt="">';
+            echo '<h4>' . $artikel_data['title'] . '</h4>';
+            echo substr($artikel_data['description'], 0,  200);
+            echo '<div class="social">';
+            echo '<a href="/post?id=' . $artikel_data['id_artikel'] . '" class="btn btn-success text-white">Selengkapnya</a>';
+            echo '</div>
                 </div>
               </div>';
-              }
-            ?>
+          }
+          ?>
 
           <!-- <div class="col-lg-12 d-flex justify-content-center">
             <a href="artikel-detail.html" class="btn btn-primary justify-content-center">Lihat Selengkapnya</a>
@@ -296,7 +300,9 @@
           <h5 class="text-uppercase"><strong>Alamat</strong></h5>
 
           <p style="font-size: 1.1em;">
-            Jl. H. Madrani No.1, Brubahan, Grendeng, Kec. Purwokerto Utara, Kabupaten Banyumas, Jawa Tengah 53122
+            <?php
+            echo $alamat;
+            ?>
           </p>
         </div>
         <!--Grid column-->
@@ -316,9 +322,9 @@
         <!--Grid column-->
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.1337580568752!2d109.24981936651538!3d-7.40587801352809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655eeffc9048e3%3A0x2da558d27eaceb91!2sMasjid%20Fatimatuzzahra!5e0!3m2!1sid!2sid!4v1651597824836!5m2!1sid!2sid"
-            frameborder="0" style="border:0; width: 100%; height: 200px;" allowfullscreen></iframe>
+          <iframe src="<?php
+                        echo $link_maps;
+                        ?>" frameborder="0" style="border:0; width: 100%; height: 200px;" allowfullscreen></iframe>
         </div>
         <!--Grid column-->
       </div>
@@ -331,8 +337,7 @@
     </div>
   </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

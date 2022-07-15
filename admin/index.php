@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <title>Admin - Masjid Fatimatuzzahra</title>
 
-    <!-- Favicons -->
+  <!-- Favicons -->
   <link href="image/favicon.ico" rel="icon">
   <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -36,10 +37,11 @@
           </ul>
         </form>
         <ul class="navbar-nav navbar-right">
-          
+
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/assets-stisla/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+              <img alt="image" src="../assets/assets-stisla/img/avatar/avatar-1.png" class="rounded-circle mr-1">
+              <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+            </a>
             <div class="dropdown-menu dropdown-menu-right">
               <a href="#" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
@@ -57,115 +59,130 @@
             <a href="index.php">MZ</a>
           </div>
           <ul class="sidebar-menu">
-              <li class="menu-header">Admin Panel</li>
-              <li class="nav-item dropdown <?php if(isset($_GET['page'])){ if($_GET['page'] == "buat-artikel" || $_GET['page'] == "list-artikel" || $_GET['page'] == "update-artikel"){ echo "active";}} ?>">
-                <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Artikel</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="/admin?page=list-artikel">List Artikel</a></li>
-                  <li><a class="nav-link" href="/admin?page=buat-artikel">Buat Artikel Baru</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown <?php if(isset($_GET['page'])){ if($_GET['page'] == "buat-kegiatan" || $_GET['page'] == "list-kegiatan" || $_GET['page'] == "update-kegiatan"){ echo "active";}} ?>">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Kegiatan & Layanan</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="/admin?page=list-kegiatan">List Kegiatan</a></li>
-                  <li><a class="nav-link" href="/admin?page=buat-kegiatan">Buat Kegiatan  Baru</a></li>
-                </ul>
-              </li>
-              <li class="<?php if(isset($_GET['page'])){ if($_GET['page'] == "donasi"){ echo "active";}} ?>"><a class="nav-link " href="/admin?page=donasi"><i class="far fa-square"></i> <span>Text Donasi</span></a></li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kegiatan</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
-                  <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
-                  <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-                </ul>
-              </li>
-              <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
-                  <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
-                  <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
-                  <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>
-                  <li><a class="nav-link" href="bootstrap-card.html">Card</a></li>
-                  <li><a class="nav-link" href="bootstrap-carousel.html">Carousel</a></li>
-                  <li><a class="nav-link" href="bootstrap-collapse.html">Collapse</a></li>
-                  <li><a class="nav-link" href="bootstrap-dropdown.html">Dropdown</a></li>
-                  <li><a class="nav-link" href="bootstrap-form.html">Form</a></li>
-                  <li><a class="nav-link" href="bootstrap-list-group.html">List Group</a></li>
-                  <li><a class="nav-link" href="bootstrap-media-object.html">Media Object</a></li>
-                  <li><a class="nav-link" href="bootstrap-modal.html">Modal</a></li>
-                  <li><a class="nav-link" href="bootstrap-nav.html">Nav</a></li>
-                  <li><a class="nav-link" href="bootstrap-navbar.html">Navbar</a></li>
-                  <li><a class="nav-link" href="bootstrap-pagination.html">Pagination</a></li>
-                  <li><a class="nav-link" href="bootstrap-popover.html">Popover</a></li>
-                  <li><a class="nav-link" href="bootstrap-progress.html">Progress</a></li>
-                  <li><a class="nav-link" href="bootstrap-table.html">Table</a></li>
-                  <li><a class="nav-link" href="bootstrap-tooltip.html">Tooltip</a></li>
-                  <li><a class="nav-link" href="bootstrap-typography.html">Typography</a></li>
-                </ul>
-              </li>
-              
-              <li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
-            </ul>
+            <li class="menu-header">Admin Panel</li>
+            <li class="nav-item dropdown <?php if (isset($_GET['page'])) {
+                                            if ($_GET['page'] == "buat-artikel" || $_GET['page'] == "list-artikel" || $_GET['page'] == "update-artikel") {
+                                              echo "active";
+                                            }
+                                          } ?>">
+              <a href="#" class="nav-link has-dropdown"><i class="far fa-file-alt"></i> <span>Artikel</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="/admin?page=list-artikel">List Artikel</a></li>
+                <li><a class="nav-link" href="/admin?page=buat-artikel">Buat Artikel Baru</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown <?php if (isset($_GET['page'])) {
+                                            if ($_GET['page'] == "buat-kegiatan" || $_GET['page'] == "list-kegiatan" || $_GET['page'] == "update-kegiatan") {
+                                              echo "active";
+                                            }
+                                          } ?>">
+              <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Kegiatan & Layanan</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="/admin?page=list-kegiatan">List Kegiatan</a></li>
+                <li><a class="nav-link" href="/admin?page=buat-kegiatan">Buat Kegiatan Baru</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown <?php if (isset($_GET['page'])) {
+                                            if ($_GET['page'] == "buat-gallery" || $_GET['page'] == "list-gallery" || $_GET['page'] == "update-gallery") {
+                                              echo "active";
+                                            }
+                                          } ?>">
+              <a href="#" class="nav-link has-dropdown"><i class="bi bi-columns"></i><span>Gallery</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="/admin?page=list-gallery">List Foto</a></li>
+                <li><a class="nav-link" href="/admin?page=buat-gallery">Tambah Foto Baru</a></li>
+              </ul>
+            </li>
+            <li class="<?php if (isset($_GET['page'])) {
+                          if ($_GET['page'] == "profile") {
+                            echo "active";
+                          }
+                        } ?>"><a class="nav-link " href="/admin?page=profile"><i class="bi bi-bank"></i> <span>Text Profile</span></a></li>
+            <li class="<?php if (isset($_GET['page'])) {
+                          if ($_GET['page'] == "donasi") {
+                            echo "active";
+                          }
+                        } ?>"><a class="nav-link " href="/admin?page=donasi"><i class="bi bi-coin"></i> <span>Text Donasi</span></a></li>
+            <li class="<?php if (isset($_GET['page'])) {
+                          if ($_GET['page'] == "alamat") {
+                            echo "active";
+                          }
+                        } ?>"><a class="nav-link " href="/admin?page=alamat"><i class="bi bi-pin-angle"></i> <span>Alamat</span></a></li>
+          </ul>
 
-            <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-              <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-                <i class="fas fa-rocket"></i> Documentation
-              </a>
-            </div>
+          <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+            <a href="/" class="btn btn-primary btn-lg btn-block btn-icon-split">
+              <i class="fas fa-rocket"></i> Home
+            </a>
+          </div>
         </aside>
       </div>
 
       <!-- Main Content -->
       <div class="main-content">
         <?php
-          if(isset($_GET['page'])) {
-            $page = $_GET['page'];
-            
-            // route
-            switch ($page) {
+        if (isset($_GET['page'])) {
+          $page = $_GET['page'];
+
+          // route
+          switch ($page) {
               // module artikel
-              case 'list-artikel':
-                include('../core/list_artikel.php');
-                break;   
-              case 'buat-artikel':
-                include('../core/buat_artikel.php');
-                break;   
-              case 'update-artikel':
-                include('../core/update_artikel.php');
-                break;   
-              case 'delete-artikel':
-                include('../core/delete_artikel_act.php');
-                break; 
+            case 'list-artikel':
+              include('../core/list_artikel.php');
+              break;
+            case 'buat-artikel':
+              include('../core/buat_artikel.php');
+              break;
+            case 'update-artikel':
+              include('../core/update_artikel.php');
+              break;
+            case 'delete-artikel':
+              include('../core/delete_artikel_act.php');
+              break;
 
               // module kegiatan & layanan
-              case 'list-kegiatan':
-                include('../core/list_kegiatan.php');
-                break;  
-              case 'buat-kegiatan':
-                include('../core/buat_kegiatan.php');
-                break; 
-              case 'update-kegiatan':
-                include('../core/update_kegiatan.php');
-                break;
+            case 'list-kegiatan':
+              include('../core/list_kegiatan.php');
+              break;
+            case 'buat-kegiatan':
+              include('../core/buat_kegiatan.php');
+              break;
+            case 'update-kegiatan':
+              include('../core/update_kegiatan.php');
+              break;
+
+              // module gallery
+            case 'list-gallery':
+              include('../core/list_gallery.php');
+              break;
+            case 'buat-gallery':
+              include('../core/buat_gallery.php');
+              break;
+            case 'update-gallery':
+              include('../core/update_gallery.php');
+              break;
 
               // donasi
-              case 'donasi':
-                include('../core/donasi.php');
-                break; 
-                  
-              
-              default:
-                include('../core/404.php');
-                break;
-            }
-            
-          } else {
-              include('../core/list_artikel.php');
+            case 'donasi':
+              include('../core/donasi.php');
+              break;
+              // profile
+            case 'profile':
+              include('../core/profile.php');
+              break;
+              // alamat
+            case 'alamat':
+              include('../core/alamat.php');
+              break;
+
+
+            default:
+              include('../core/404.php');
+              break;
           }
+        } else {
+          include('../core/list_artikel.php');
+        }
         ?>
       </div>
       <footer class="main-footer">
@@ -201,7 +218,8 @@
   <!-- Page Specific JS File -->
   <script src="../assets/assets-stisla/js/page/index.js"></script>
   <script>
-    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace('editor1');
   </script>
 </body>
+
 </html>

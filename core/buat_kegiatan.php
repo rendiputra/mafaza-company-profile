@@ -20,8 +20,8 @@
               <div class="form-group">
                 <label>Badge</label>
                 <input name="badge" type="text" class="form-control" required="" placeholder='<i class="bi bi-arrow-left"></i>'>
-                Informasi badge bisa didapat dari: <a href="https://icons.getbootstrap.com/" class="link-info">Icon Bootstrap</a> | 
-                <a href="https://boxicons.com/" class="link-info">Boxicons</a>
+                Informasi badge bisa didapat dari: <a href="https://icons.getbootstrap.com/" class="link-info" target="_blank">Icon Bootstrap</a> | 
+                <a href="https://boxicons.com/" class="link-info" target="_blank">Boxicons</a>
               </div>
               <div class="form-group">
                 <label>Deskripsi kegiatan</label>
