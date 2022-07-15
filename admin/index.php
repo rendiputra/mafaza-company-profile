@@ -87,7 +87,7 @@
                                               echo "active";
                                             }
                                           } ?>">
-              <a href="#" class="nav-link has-dropdown"><i class="bi bi-columns"></i><span>Gallery</span></a>
+              <a href="#" class="nav-link has-dropdown"><i class="bi bi-card-image"></i><span>Gallery</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="/admin?page=list-gallery">List Foto</a></li>
                 <li><a class="nav-link" href="/admin?page=buat-gallery">Tambah Foto Baru</a></li>
@@ -102,12 +102,17 @@
                           if ($_GET['page'] == "donasi") {
                             echo "active";
                           }
-                        } ?>"><a class="nav-link " href="/admin?page=donasi"><i class="bi bi-coin"></i> <span>Text Donasi</span></a></li>
+                        } ?>"><a class="nav-link " href="/admin?page=donasi"><i class="bi bi-cash-stack"></i> <span>Text Donasi</span></a></li>
             <li class="<?php if (isset($_GET['page'])) {
                           if ($_GET['page'] == "alamat") {
                             echo "active";
                           }
                         } ?>"><a class="nav-link " href="/admin?page=alamat"><i class="bi bi-pin-angle"></i> <span>Alamat</span></a></li>
+            <li class="<?php if (isset($_GET['page'])) {
+                          if ($_GET['page'] == "list-contact-us") {
+                            echo "active";
+                          }
+                        } ?>"><a class="nav-link " href="/admin?page=list-contact-us"><i class="bi bi-chat-left-text"></i><span>Contact Us</span></a></li>
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -173,6 +178,10 @@
               // alamat
             case 'alamat':
               include('../core/alamat.php');
+              break;
+              // contact-us
+            case 'list-contact-us':
+              include('../core/list_contact_us.php');
               break;
 
 

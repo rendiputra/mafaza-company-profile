@@ -31,8 +31,6 @@ if ($result_alamat = $mysqli->query("SELECT * FROM t_alamat ORDER BY id_alamat D
   $link_maps = "";
   $alamat = "";
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -257,7 +255,7 @@ if ($result_alamat = $mysqli->query("SELECT * FROM t_alamat ORDER BY id_alamat D
 
         <div class="row">
           <div class="col-lg-12 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="#" method="post" role="form" class="php-email-form">
+            <form action="core/contact_us_act.php" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -276,7 +274,7 @@ if ($result_alamat = $mysqli->query("SELECT * FROM t_alamat ORDER BY id_alamat D
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
-              <div class="text-center"><button type="submit">Kirim</button></div>
+              <div class="text-center"><input type="submit" class="btn btn-success " name="submit" id="subject" value="Kirim" required></div>
             </form>
           </div>
 
