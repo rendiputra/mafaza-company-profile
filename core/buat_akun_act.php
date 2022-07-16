@@ -16,11 +16,11 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($mysqli, "INSERT INTO users (id_users, nama, email, password, created_at) VALUES (NULL, '$nama', '$email', '$hash', '$now')");
 
     if ($query) {
-      header("location: ../admin?page=list-akun&status=sukses");
+      header("location: /admin?page=list-akun&status=sukses");
     } else {
-      header("location: ../admin?page=list-akun&status=gagal");
+      header("location: /admin?page=list-akun&status=gagal");
     }
   }
 } else {
-  header("location: ../admin?page=buat-akun&status=gagal", true, 200);
+  header("location: /admin?page=buat-akun&status=gagal", true, 200);
 }

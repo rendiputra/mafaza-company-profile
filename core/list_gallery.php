@@ -23,7 +23,7 @@ if ($result = $mysqli->query("SELECT * FROM t_gallery ORDER BY id_gallery DESC")
               <h4>List Gallery</h4>
             </div>
             <div class="card-body">
-              <a href="admin?page=buat-gallery" class="btn btn-primary mb-3">Tambah Foto Baru</a>
+              <a href="/admin?page=buat-gallery" class="btn btn-primary mb-3">Tambah Foto Baru</a>
               <div class="table-responsive">
                 <table class="table table-hover">
                   <thead>

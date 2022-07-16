@@ -11,11 +11,11 @@ if (isset($_POST['submit'])) {
   $query = mysqli_query($mysqli, "INSERT INTO t_kegiatan (id_kegiatan, title, description, badge, created_at) VALUES (NULL, '$judul', '$deskripsi', '$badge', '$now')");
 
   if ($query) {
-    header("location: ../admin?page=list-artikel");
+    header("location: ../admin?page=list-kegiatan");
   } else {
-    echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin?page=buat-artikel">Di sini</a>';
+    echo 'Data gagal diinput. Silahkan coba lagi <a href="../admin?page=buat-kegiatan">Di sini</a>';
   }
 
 } else {
-  header("location: ../admin?page=buat-artikel", true, 200);
+  header("location: ../admin?page=buat-kegiatan", true, 200);
 }

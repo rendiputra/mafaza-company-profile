@@ -21,11 +21,11 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/assets-stisla/css/style.css">
   <link rel="stylesheet" href="../assets/assets-stisla/css/components.css">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
   <!-- plugin -->
-  <script src="assets/vendor/ckeditor/ckeditor.js"></script>
+  <script src="/assets/vendor/ckeditor/ckeditor.js"></script>
 </head>
 
 <body>
@@ -56,10 +56,10 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.php">Mafaza</a>
+            <a href="/">Mafaza</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.php">MZ</a>
+            <a href="/">MZ</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Admin Panel</li>
@@ -230,7 +230,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assets/assets-stisla/js/stisla.js"></script>
+  <script src="/assets/assets-stisla/js/stisla.js"></script>
 
   <!-- JS Libraies -->
   <script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
@@ -240,11 +240,11 @@
   <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
   <!-- Template JS File -->
-  <script src="../assets/assets-stisla/js/scripts.js"></script>
-  <script src="../assets/assets-stisla/js/custom.js"></script>
+  <script src="/assets/assets-stisla/js/scripts.js"></script>
+  <script src="/assets/assets-stisla/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="../assets/assets-stisla/js/page/index.js"></script>
+  <script src="/assets/assets-stisla/js/page/index.js"></script>
   <script>
     CKEDITOR.replace('editor1');
   </script>

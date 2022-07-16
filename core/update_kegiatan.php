@@ -26,7 +26,7 @@ if (isset($_GET['update_id'])) {
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
           <div class="card">
-            <form action="core/update_kegiatan_act.php?id=<?php echo $d['id_kegiatan'] ?>" enctype="multipart/form-data" method="post">
+            <form action="/core/update_kegiatan_act.php?id=<?php echo $d['id_kegiatan'] ?>" enctype="multipart/form-data" method="post">
               <div class="card-header">
                 <h4>Buat Kegiatan Baru</h4>
               </div>

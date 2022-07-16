@@ -21,7 +21,7 @@ include_once("../config.php");
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
           <div class="card">
-            <form action="core/profile_act.php?id=<?php echo $d['id_desc_profile'] ?>" enctype="multipart/form-data" method="post">
+            <form action="/core/profile_act.php?id=<?php echo $d['id_desc_profile'] ?>" enctype="multipart/form-data" method="post">
               <div class="card-header">
                 <h4>Deskripsi Profile</h4>
               </div>

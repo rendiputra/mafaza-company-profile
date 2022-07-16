@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-12 col-md-12 col-lg-12">
         <div class="card">
-          <form action="core/buat_gallery_act.php" enctype="multipart/form-data" method="post">
+          <form action="/core/buat_gallery_act.php" enctype="multipart/form-data" method="post">
             <div class="card-header">
               <h4>Tambah Foto Baru</h4>
             </div>

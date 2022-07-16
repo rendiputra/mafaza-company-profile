@@ -23,7 +23,7 @@ if ($result = $mysqli->query("SELECT * FROM t_artikel ORDER BY id_artikel DESC")
               <h4>List Artikel</h4>
             </div>
             <div class="card-body">
-              <a href="admin?page=buat-artikel" class="btn btn-primary mb-3">Tulis Artikel Baru</a>
+              <a href="/admin?page=buat-artikel" class="btn btn-primary mb-3">Tulis Artikel Baru</a>
               <div class="table-responsive">
                 <table class="table table-hover">
                   <thead>

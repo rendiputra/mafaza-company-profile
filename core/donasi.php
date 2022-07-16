@@ -20,7 +20,7 @@ if ($result = $mysqli->query("SELECT * FROM t_desc_donasi ORDER BY id_desc_donas
       <div class="row">
         <div class="col-12 col-md-12 col-lg-12">
           <div class="card">
-            <form action="core/donasi_act.php?id=<?php echo $d['id_desc_donasi'] ?>" enctype="multipart/form-data" method="post">
+            <form action="/core/donasi_act.php?id=<?php echo $d['id_desc_donasi'] ?>" enctype="multipart/form-data" method="post">
               <div class="card-header">
                 <h4>Deskripsi donasi</h4>
               </div>
