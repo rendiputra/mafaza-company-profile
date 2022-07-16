@@ -10,8 +10,8 @@
   <title>Admin - Masjid Fatimatuzzahra</title>
 
   <!-- Favicons -->
-  <link href="image/favicon.ico" rel="icon">
-  <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/image/favicon.ico" rel="icon">
+  <link href="/image/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,8 +19,8 @@
 
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assets/assets-stisla/css/style.css">
-  <link rel="stylesheet" href="../assets/assets-stisla/css/components.css">
+  <link rel="stylesheet" href="/assets/assets-stisla/css/style.css">
+  <link rel="stylesheet" href="/assets/assets-stisla/css/components.css">
   <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
